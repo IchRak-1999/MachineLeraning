@@ -22,10 +22,12 @@ os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
 os.environ["QT_SCREEN_SCALE_FACTORS"] = "1"
 os.environ["QT_SCALE_FACTOR"] = "1"
 
+current_dir = os.getcwd()
+
 app = Flask(__name__)
-Folder = 'C:\\Users\\LENOVO\\Desktop\\PRB_\\uploads'
+Folder = os.path.join(current_dir,"Images")
 app.config['Folder'] = Folder
-DATA = 'C:\\Users\\LENOVO\\Desktop\\PRB_\\MO'
+DATA = os.path.join(current_dir,"Data_Train")
 CLASSES = ['CI', 'CII', 'CII_V', 'CIII', 'CIII_V', 'CIV', 'CIV_V', 'CV']
 num_classes = len(CLASSES)
 epochs = 20
